@@ -1,6 +1,8 @@
 package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 String contraseñacorrecta = "12345";
                 String usuario = user.getText().toString();
                 String contraseña = passwd.getText().toString();
+                resulText.setTextColor(Color.rgb(255,0,0));
+
 
                 if (usuario.equals(usuariocorrecto) && contraseña.equals(contraseñacorrecta)) {
                     resulText.setText("Usuario y contraseña correctos");
+                    resulText.setTextColor(Color.rgb(0,255,0));
                 } else if (usuario.isEmpty() && contraseña.isEmpty()) {
                     resulText.setText("El usuario y la contraseña no pueden estar vacíos");
                 } else if (!usuario.equals(usuariocorrecto) && contraseña.equals(contraseñacorrecta)) {
